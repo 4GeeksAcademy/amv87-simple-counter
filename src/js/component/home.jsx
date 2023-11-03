@@ -1,26 +1,22 @@
 import React from "react";
+import Counter from "./counter";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
-const Home = () => {
+
+const SimpleCounter = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container my-5">
+			<div className="d-flex flex-row justify-content-evenly rounded align-items-center" style={{width: '80rem', height:'16rem', backgroundColor: 'rgb(9, 9, 9)'}}>
+				<Counter number={<i className="far fa-clock"></i>} />
+				<Counter number={props.secondHundredThousands} />
+				<Counter number={props.secondTenThousands} />
+				<Counter number={props.secondThousands} />
+				<Counter number={props.secondHundreds} />
+				<Counter number={props.secondTens} />
+				<Counter number={props.secondUnits} />
+			</div>
 		</div>
 	);
 };
 
-export default Home;
+export default SimpleCounter;
